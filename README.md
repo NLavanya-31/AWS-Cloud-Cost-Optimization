@@ -1,1 +1,3 @@
 # AWS-Cloud-Cost-Optimization
+The lambda function designed to spot EBS snapshots devoid of any linkage to active EC2 instances. The function then proceeds to eradicate these snapshots, resulting in reduced storage expenditures.
+This Lambda function retrieves all EBS snapshots owned by the account and gathers a comprehensive list of active EC2 instances, encompassing both running and stopped instances. Subsequently, for each snapshot, it conducts a validation check to ensure that its corresponding volume, if present, remains disassociated from any active instance. Upon detecting obsolete snapshots, the function initiates their deletion, effectively streamlining storage costs.
